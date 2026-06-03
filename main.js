@@ -199,38 +199,39 @@ console.log(
 );
 
 // ── Contact Modal ─────────────────────────────────────────────
-const contactModalBackdrop = document.getElementById('contactModalBackdrop');
-
-function openContactModal() {
-  if (contactModalBackdrop) {
-    contactModalBackdrop.classList.add('open');
+// Attach to window so inline onclick="openContactModal()" always works
+window.openContactModal = function () {
+  const backdrop = document.getElementById('contactModalBackdrop');
+  if (backdrop) {
+    backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-}
+};
 
-function closeContactModal() {
-  if (contactModalBackdrop) {
-    contactModalBackdrop.classList.remove('open');
+window.closeContactModal = function () {
+  const backdrop = document.getElementById('contactModalBackdrop');
+  if (backdrop) {
+    backdrop.classList.remove('open');
     document.body.style.overflow = '';
   }
-}
-
-// Open modal on all "Get Service" / "Contact Us" nav buttons
-document.querySelectorAll('.nav-cta-modal, #hero-contact-btn-modal').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    openContactModal();
-  });
-});
+};
 
 // Close on backdrop click
-if (contactModalBackdrop) {
-  contactModalBackdrop.addEventListener('click', (e) => {
-    if (e.target === contactModalBackdrop) closeContactModal();
-  });
-}
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id === 'contactModalBackdrop') {
+    window.closeContactModal();
+  }
+});
 
 // Close on Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeContactModal();
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') window.closeContactModal();
+});
+
+// Attach modal trigger to all .nav-cta-modal links via JS as well (belt & suspenders)
+document.querySelectorAll('.nav-cta-modal').forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.openContactModal();
+  });
 });
