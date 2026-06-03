@@ -779,48 +779,213 @@ h1,h2,h3,h4,h5 { font-family: var(--font-head); line-height: 1.2; color: #ffffff
 .page { display: none; }
 .page.active { display: block; }
 
-/* ── Responsive ── */
+/* ══════════════════════════════════════════
+   RESPONSIVE — TABLET (≤1024px)
+══════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .services-grid { grid-template-columns: repeat(2,1fr); }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
   .about-img-accent { display: none; }
+  .about-exp-tag { top: 12px; left: 12px; }
+  .why-grid { gap: 40px; }
+  .quality-grid { gap: 40px; }
+  .hero-img-frame img { height: 380px; }
 }
 
+/* ══════════════════════════════════════════
+   RESPONSIVE — MOBILE (≤768px)
+══════════════════════════════════════════ */
 @media (max-width: 768px) {
+
+  /* — Nav — */
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
+  .hamburger span { background: #ffffff; }   /* visible on dark navbar */
+  .nav-inner { height: 60px; }
+  .logo-name { font-size: 1.1rem; }
+  .logo-sub { display: none; }
+  .logo-icon { width: 40px; height: 40px; }
 
-  .hero-content { padding: 60px 0; }
-  .hero h1 { font-size: 2.2rem; }
-  .hero-stats { gap: 24px; }
+  /* — Mobile Menu — */
+  .mobile-menu { top: 60px; }
+  .mobile-menu a { font-size: 1rem; padding: 14px 16px; }
+  .mobile-menu .nav-cta {
+    display: block; text-align: center;
+    padding: 14px 16px !important; margin-top: 10px;
+    border-radius: 50px !important;
+  }
 
-  .about-grid, .why-grid, .quality-grid, .contact-grid, .ba-grid { grid-template-columns: 1fr; }
-  .about-img-wrap { max-width: 500px; }
-  .why-visual { grid-template-columns: 1fr 1fr; }
+  /* — Section Spacing — */
+  .about-section,
+  .services-section,
+  .why-section,
+  .before-after-section,
+  .quality-section,
+  .contact-section,
+  .gallery-section,
+  .process-section { padding: 60px 0; }
+  .section-head { margin-bottom: 40px; }
+  .section-head h2 { font-size: 1.7rem; }
+  .section-head p { font-size: 0.95rem; }
+
+  /* — Hero — */
+  .hero { min-height: auto; padding-top: 60px; }
+  .hero .container {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 0 !important;
+  }
+  .hero-content { padding: 50px 0 30px; text-align: center; }
+  .hero-badge { margin: 0 auto 20px; }
+  .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); margin-bottom: 16px; }
+  .hero-sub { font-size: 0.95rem; max-width: 100%; margin-bottom: 28px; }
+  .hero-actions {
+    flex-direction: column; gap: 12px; margin-bottom: 40px;
+    align-items: center;
+  }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .hero-stats {
+    gap: 20px; padding-top: 28px; justify-content: center; flex-wrap: wrap;
+  }
+  .stat-value { font-size: 1.6rem; }
+  .stat-label { font-size: 0.72rem; }
+  .hero-visual {
+    display: flex; justify-content: center; padding: 0 0 40px;
+  }
+  .hero-img-frame { width: 100%; max-width: 420px; }
+  .hero-img-frame img { height: 260px; }
+  .hero-img-badge { left: 12px; bottom: -12px; padding: 10px 14px; }
+  .badge-info .badge-num { font-size: 1.1rem; }
+  .badge-info .badge-txt { font-size: 0.65rem; }
+
+  /* — About — */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-wrap { max-width: 100%; }
+  .about-img-main img { height: 280px; }
+  .about-content h2 { font-size: 1.6rem; }
+  .about-features { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .feature-pill { padding: 10px 12px; font-size: 0.82rem; }
+
+  /* — Services — */
+  .services-grid { grid-template-columns: 1fr; gap: 20px; }
+  .service-card { padding: 28px 22px; }
+
+  /* — Why Section — */
+  .why-grid { grid-template-columns: 1fr; gap: 40px; }
+  .why-visual { grid-template-columns: 1fr 1fr; gap: 12px; }
   .why-card:first-child { grid-column: span 2; }
+  .why-card .wc-num { font-size: 2.2rem; }
 
-  .services-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  /* — Gallery — */
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .gallery-item:nth-child(1) { grid-column: span 2; }
+  .gallery-item img { height: 200px; }
+  .gallery-item:nth-child(1) img { height: 260px; }
 
+  /* — Before & After — */
+  .ba-grid { grid-template-columns: 1fr; gap: 24px; }
+  .ba-card img { height: 220px; }
+
+  /* — Quality — */
+  .quality-grid { grid-template-columns: 1fr; gap: 40px; }
+  .quality-img img { height: 280px; }
+
+  /* — CTA Banner — */
+  .cta-banner { padding: 60px 0; }
+  .cta-banner h2 { font-size: 1.6rem; }
+  .cta-banner p { font-size: 0.95rem; }
+  .cta-actions { flex-direction: column; align-items: center; gap: 12px; }
+  .cta-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* — Terms Page — */
+  .terms-hero { padding: 100px 0 48px; }
   .terms-grid { grid-template-columns: 1fr; }
   .terms-nav { display: none; }
+  .terms-content { gap: 32px; }
 
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  /* — Contact — */
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-actions-wrap { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .contact-action-btn { padding: 16px 8px; font-size: 0.78rem; }
+  .ca-icon { font-size: 1.5rem; }
 
-  .hero-visual { display: none; }
-  .contact-actions-wrap { grid-template-columns: 1fr; }
+  /* — Process Page — */
+  .process-hero { padding: 110px 0 60px; }
+  .process-hero h1 { font-size: 2rem; }
+  .step-content { padding: 0 0 40px 20px; }
+  .step-content h3 { font-size: 1.1rem; }
+  .step-num-wrap { width: 52px; height: 52px; font-size: 1rem; }
 
-  .float-contact { bottom: 20px; right: 20px; }
+  /* — Footer — */
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; margin-bottom: 32px; }
+  .footer-col h4 { margin-bottom: 12px; }
+  .footer-bottom {
+    flex-direction: column; gap: 10px; text-align: center; padding: 16px 0;
+  }
+  .footer-bottom-links { justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+  /* — Float Button — */
+  .float-contact { bottom: 20px; right: 16px; }
+  .float-btn { width: 52px; height: 52px; font-size: 1.2rem; }
 }
 
+/* ══════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (≤480px)
+══════════════════════════════════════════ */
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
+
+  /* — Hero — */
+  .hero h1 { font-size: 1.9rem; }
+  .hero-sub { font-size: 0.9rem; }
+  .hero-stats { gap: 16px; }
+  .stat-value { font-size: 1.4rem; }
+
+  /* — About — */
+  .about-features { grid-template-columns: 1fr; }
+  .feature-pill { padding: 10px 14px; }
+
+  /* — Why Cards — */
+  .why-visual { grid-template-columns: 1fr; }
+  .why-card:first-child { grid-column: span 1; }
+
+  /* — Gallery — */
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item:nth-child(1) { grid-column: span 1; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
-  .about-features { grid-template-columns: 1fr; }
-  .cta-actions { flex-direction: column; align-items: center; }
+  .gallery-item img,
+  .gallery-item:nth-child(1) img { height: 220px; }
+
+  /* — Contact Actions — */
+  .contact-actions-wrap { grid-template-columns: 1fr; }
+  .contact-action-btn {
+    flex-direction: row; gap: 12px;
+    padding: 16px 20px; justify-content: center; font-size: 0.9rem;
+  }
+  .ca-icon { font-size: 1.4rem; }
+
+  /* — Service Card — */
+  .service-icon { width: 54px; height: 54px; font-size: 1.5rem; }
+  .service-card h3 { font-size: 1rem; }
+
+  /* — Section Tags — */
+  .section-tag { font-size: 0.7rem; padding: 5px 12px; }
+
+  /* — CTA — */
+  .cta-actions .btn { max-width: 100%; }
+  .btn-lg { padding: 15px 28px; font-size: 0.95rem; }
 }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — EXTRA SMALL (≤360px)
+══════════════════════════════════════════ */
+@media (max-width: 360px) {
+  .hero h1 { font-size: 1.7rem; }
+  .logo-name { font-size: 1rem; }
+  .logo-icon { width: 36px; height: 36px; }
+  .hero-stats { flex-direction: column; align-items: center; text-align: center; }
+  .section-head h2 { font-size: 1.5rem; }
+  .why-card .wc-num { font-size: 1.8rem; }
+  .step-num-wrap { width: 44px; height: 44px; font-size: 0.9rem; }
+  .float-btn { width: 46px; height: 46px; font-size: 1.1rem; }
+}
+
