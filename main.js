@@ -197,3 +197,40 @@ console.log(
   'color:#f59e0b;font-weight:900;font-size:1.1rem;',
   'color:#60a5fa;font-size:0.9rem;'
 );
+
+// ── Contact Modal ─────────────────────────────────────────────
+const contactModalBackdrop = document.getElementById('contactModalBackdrop');
+
+function openContactModal() {
+  if (contactModalBackdrop) {
+    contactModalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeContactModal() {
+  if (contactModalBackdrop) {
+    contactModalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+// Open modal on all "Get Service" / "Contact Us" nav buttons
+document.querySelectorAll('.nav-cta-modal, #hero-contact-btn-modal').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openContactModal();
+  });
+});
+
+// Close on backdrop click
+if (contactModalBackdrop) {
+  contactModalBackdrop.addEventListener('click', (e) => {
+    if (e.target === contactModalBackdrop) closeContactModal();
+  });
+}
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeContactModal();
+});

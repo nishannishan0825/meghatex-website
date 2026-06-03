@@ -30,7 +30,7 @@
         <li><a href="index.html" class="active" id="nav-home">Home</a></li>
         <li><a href="ourwork.html" id="nav-work">Our Work</a></li>
         <li><a href="terms.html" id="nav-terms">Terms & Contact</a></li>
-        <li><a href="terms.html#contact" class="nav-cta">Get Service</a></li>
+        <li><a href="#" class="nav-cta nav-cta-modal">Get Service</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -45,7 +45,7 @@
     <li><a href="index.html">🏠 Home</a></li>
     <li><a href="ourwork.html">🔧 Our Work</a></li>
     <li><a href="terms.html">📋 Terms & Contact</a></li>
-    <li><a href="terms.html#contact" class="nav-cta">Get Service</a></li>
+    <li><a href="#" class="nav-cta nav-cta-modal">Get Service</a></li>
   </ul>
 </div>
 
@@ -355,5 +355,30 @@
 </div>
 
 <script src="main.js"></script>
+<!-- -- CONTACT MODAL -- -->
+<div class="contact-modal-backdrop" id="contactModalBackdrop" role="dialog" aria-modal="true" aria-label="Contact Megha Tex">
+  <div class="contact-modal">
+    <button class="contact-modal-close" onclick="closeContactModal()" aria-label="Close">?</button>
+    <div class="contact-modal-icon">??</div>
+    <h3>Contact Megha Tex</h3>
+    <p>Choose how you'd like to reach us.<br>We respond within minutes!</p>
+    <div class="contact-modal-btns">
+      <a href="tel:+919994427295" class="cm-btn cm-call" onclick="closeContactModal()">
+        <span class="cm-btn-icon">??</span>
+        <span class="cm-btn-text"><span>Call us directly</span><strong>+91 99944 27295</strong></span>
+      </a>
+      <div class="contact-modal-divider"><span>or</span></div>
+      <a href="https://mail.google.com/mail/?view=cm&to=meghatex999@gmail.com&su=Bobbin%20Holder%20Service%20Request&body=Hello%20Megha%20Tex%2C%0A%0AI%20would%20like%20to%20request%20your%20Bobbin%20Holder%20Service.%0APlease%20find%20my%20details%20below%3A%0A%0A%F0%9F%8F%AD%20Mill%20Name%3A%20%0A%0A%F0%9F%94%A7%20Type%20of%20Service%3A%20(Cleaning%20%2F%20Repair%20%2F%20Restoration%20%2F%20Maintenance)%0A%0A%F0%9F%93%9E%20Contact%20Number%3A%20%0A%0A%F0%9F%93%8D%20Mill%20Address%3A%20%0A%0AKindly%20get%20back%20to%20you%20as%20early%20as%20possible.%0A%0AThank%20you!" target="_blank" rel="noopener" class="cm-btn cm-email" onclick="closeContactModal()">
+        <span class="cm-btn-icon">??</span>
+        <span class="cm-btn-text"><span>Send an email</span><strong>meghatex999@gmail.com</strong></span>
+      </a>
+      <div class="contact-modal-divider"><span>or</span></div>
+      <a href="https://wa.me/919994427295?text=Hello%20Megha%20Tex!%20%F0%9F%91%8B%20I%20would%20like%20to%20request%20your%20Bobbin%20Holder%20Service.%0A%0A%F0%9F%8F%AD%20*Mill%20Name*%3A%20%0A%0A%F0%9F%94%A7%20*Type%20of%20Service*%3A%20(Cleaning%20%2F%20Repair%20%2F%20Restoration%20%2F%20Maintenance)%0A%0A%F0%9F%93%9E%20*Contact%20Number*%3A%20%0A%0A%F0%9F%93%8D%20*Mill%20Address*%3A%20%0A%0AKindly%20get%20back%20to%20you%20as%20early%20as%20possible.%20Thank%20you!" target="_blank" rel="noopener" class="cm-btn cm-wa" onclick="closeContactModal()">
+        <span class="cm-btn-icon">??</span>
+        <span class="cm-btn-text"><span>Chat on WhatsApp</span><strong>+91 99944 27295</strong></span>
+      </a>
+    </div>
+  </div>
+</div>
 </body>
 </html>
