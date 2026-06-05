@@ -10,18 +10,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <style>
+      <style>
     /* ══════════════════════════════════════
-       OUR WORK PAGE – PREMIUM PROFESSIONAL THEME
-       White #FFFFFF | Soft Gray #F8FAFC | Navy #0D2137 | Gold #F59E0B
+       OUR WORK PAGE – BLUE & WHITE INDUSTRIAL THEME
+       Navy #0A2540 | Blue #2563EB | Light Blue #60A5FA | White #FFFFFF
     ══════════════════════════════════════ */
 
     :root {
-      --ow-navy:    #0D2137;
-      --ow-navy2:   #1A365D;
-      --ow-amber:   #F59E0B;
-      --ow-amber2:  #FCD34D;
-      --ow-text:    #1E293B;
+      --ow-navy:    #0A2540;
+      --ow-navy2:   #12355B;
+      --ow-blue:    #2563EB;
+      --ow-blue2:   #1D4ED8;
+      --ow-blight:  #60A5FA;
+      --ow-bpale:   #EFF6FF;
+      --ow-bpale2:  #DBEAFE;
+      --ow-text:    #0F172A;
       --ow-muted:   #64748B;
       --ow-border:  #E2E8F0;
       --ow-bg:      #F8FAFC;
@@ -30,15 +33,25 @@
 
     body { background: var(--ow-bg); color: var(--ow-text); }
 
-    .navbar { background: rgba(255,255,255,0.96) !important; border-bottom: 1px solid var(--ow-border) !important; }
-    .navbar.scrolled { background: rgba(255,255,255,0.99) !important; box-shadow: 0 4px 20px rgba(0,0,0,0.07) !important; }
-    .nav-links a.active { color: var(--ow-navy) !important; font-weight: 600 !important; }
-    .nav-cta { background: var(--ow-navy) !important; box-shadow: 0 2px 8px rgba(13,33,55,0.25) !important; }
-    .nav-cta:hover { background: var(--ow-navy2) !important; transform: translateY(-1px) !important; box-shadow: 0 6px 18px rgba(13,33,55,0.30) !important; }
+    /* Navbar — dark navy */
+    .navbar { background: rgba(10,37,64,0.95) !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; }
+    .navbar.scrolled { background: rgba(10,37,64,0.98) !important; box-shadow: 0 4px 24px rgba(10,37,64,0.40) !important; }
+    .nav-links a { color: rgba(255,255,255,0.80) !important; }
+    .nav-links a:hover { color: #60A5FA !important; background: rgba(255,255,255,0.06) !important; }
+    .nav-links a.active { color: #60A5FA !important; font-weight: 600 !important; }
+    .nav-cta { background: #2563EB !important; box-shadow: 0 4px 14px rgba(37,99,235,0.35) !important; }
+    .nav-cta:hover { background: #1D4ED8 !important; transform: translateY(-1px) !important; }
+    .hamburger span { background: #fff !important; }
 
+    /* Mobile menu */
+    .mobile-menu { background: rgba(10,37,64,0.98) !important; border-color: rgba(255,255,255,0.08) !important; }
+    .mobile-menu a { color: rgba(255,255,255,0.80) !important; }
+    .mobile-menu a:hover { background: rgba(255,255,255,0.06) !important; color: #60A5FA !important; }
+
+    /* ── Hero ── */
     .ow-hero {
       position: relative;
-      background: linear-gradient(135deg, #0D2137 0%, #1A365D 55%, #0F2942 100%);
+      background: linear-gradient(135deg, #0A2540 0%, #12355B 55%, #0D3060 100%);
       padding: 140px 0 70px; overflow: hidden; text-align: center;
     }
     .ow-hero::before {
@@ -46,23 +59,30 @@
       background-image: url('images/spinning_mill_floor.png');
       background-size: cover; background-position: center; opacity: 0.07;
     }
+    /* Blue ambient glow */
+    .ow-hero::after {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
     .ow-hero-grid { position: absolute; inset: 0; overflow: hidden; }
     .ow-hero-grid::before {
       content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
       background-size: 48px 48px;
     }
     .ow-hero-inner { position: relative; z-index: 2; }
     .ow-hero-badge {
       display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.30);
+      background: rgba(37,99,235,0.15); border: 1px solid rgba(96,165,250,0.35);
       padding: 7px 18px; border-radius: 50px; margin-bottom: 24px;
     }
-    .ow-hero-badge span { color: #FCD34D; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
-    .ow-hero-badge::before { content: ''; width: 7px; height: 7px; background: #F59E0B; border-radius: 50%; animation: pulse 2s infinite; }
-    .ow-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 18px; }
-    .ow-hero h1 em { color: #F59E0B; font-style: normal; }
-    .ow-hero p { color: rgba(255,255,255,0.65); font-size: 1.08rem; max-width: 540px; margin: 0 auto 40px; line-height: 1.75; }
+    .ow-hero-badge span { color: #60A5FA; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    .ow-hero-badge::before { content: ''; width: 7px; height: 7px; background: #60A5FA; border-radius: 50%; animation: pulse 2s infinite; }
+    .ow-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; color: #fff; line-height: 1.08; margin-bottom: 18px; }
+    .ow-hero h1 em { color: #60A5FA; font-style: normal; }
+    .ow-hero p { color: rgba(255,255,255,0.72); font-size: 1.08rem; max-width: 540px; margin: 0 auto 40px; line-height: 1.75; }
     .ow-hero-stats {
       display: flex; justify-content: center; gap: 0;
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
@@ -70,112 +90,118 @@
     }
     .ow-stat { flex: 1; padding: 22px 16px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
     .ow-stat:last-child { border-right: none; }
-    .ow-stat-val { font-family: 'Manrope','Inter',sans-serif; font-size: 1.7rem; font-weight: 900; color: #F59E0B; line-height: 1; margin-bottom: 6px; }
+    .ow-stat-val { font-size: 1.7rem; font-weight: 800; color: #60A5FA; line-height: 1; margin-bottom: 6px; }
     .ow-stat-lbl { font-size: 0.70rem; color: rgba(255,255,255,0.55); letter-spacing: 1.2px; text-transform: uppercase; }
 
+    /* ── Section Utilities ── */
     .ow-section-tag {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(13,33,55,0.06); border: 1px solid rgba(13,33,55,0.12); color: #1A365D;
+      background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.18); color: #2563EB;
       padding: 6px 16px; border-radius: 50px; font-size: 0.72rem; font-weight: 700;
       letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 16px;
     }
-    .ow-section-tag::before { content: ''; width: 6px; height: 6px; background: #F59E0B; border-radius: 50%; }
+    .ow-section-tag::before { content: ''; width: 6px; height: 6px; background: #2563EB; border-radius: 50%; }
     .ow-section-head { text-align: center; margin-bottom: 56px; }
-    .ow-section-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #1E293B; margin-bottom: 12px; }
-    .ow-section-head h2 em { color: #F59E0B; font-style: normal; }
+    .ow-section-head h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: #0F172A; margin-bottom: 12px; }
+    .ow-section-head h2 em { color: #2563EB; font-style: normal; }
     .ow-section-head p { color: #64748B; font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.72; }
-    .ow-divider { width: 44px; height: 3px; background: #F59E0B; border-radius: 2px; margin: 14px auto 18px; }
+    .ow-divider { width: 44px; height: 3px; background: #2563EB; border-radius: 2px; margin: 14px auto 18px; }
 
+    /* ── Process Section ── */
     .ow-process { padding: 90px 0; background: #FFFFFF; }
     .ow-steps { display: flex; flex-direction: column; gap: 18px; max-width: 900px; margin: 0 auto; }
     .ow-step {
       display: grid; grid-template-columns: 100px 1fr; gap: 0;
       background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px;
       overflow: hidden; transition: all 0.28s ease; position: relative;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 3px rgba(15,23,42,0.05);
     }
     .ow-step::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, #F59E0B, #D97706);
+      background: linear-gradient(90deg, #2563EB, #60A5FA);
       transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
     }
     .ow-step:hover::before { transform: scaleX(1); }
-    .ow-step:hover { border-color: rgba(13,33,55,0.18); transform: translateX(5px); box-shadow: -3px 0 0 #F59E0B, 0 8px 24px rgba(0,0,0,0.08); }
+    .ow-step:hover { border-color: rgba(37,99,235,0.20); transform: translateX(5px); box-shadow: -3px 0 0 #2563EB, 0 8px 24px rgba(37,99,235,0.12); }
     .ow-step-num {
-      background: rgba(245,158,11,0.05); display: flex; flex-direction: column;
+      background: #EFF6FF; display: flex; flex-direction: column;
       align-items: center; justify-content: center; padding: 28px 16px;
       border-right: 1px solid #E2E8F0; gap: 10px;
     }
-    .ow-step-num .num { font-family: 'Manrope','Inter',sans-serif; font-size: 2rem; font-weight: 900; color: #F59E0B; line-height: 1; }
+    .ow-step-num .num { font-size: 2rem; font-weight: 900; color: #2563EB; line-height: 1; }
     .ow-step-num .icon { font-size: 1.5rem; }
     .ow-step-body { padding: 26px 30px; }
-    .ow-step-body h3 { font-size: 1.12rem; font-weight: 800; color: #1E293B; margin-bottom: 10px; }
+    .ow-step-body h3 { font-size: 1.12rem; font-weight: 800; color: #0F172A; margin-bottom: 10px; }
     .ow-step-body p { font-size: 0.91rem; color: #64748B; line-height: 1.75; margin-bottom: 14px; }
     .ow-step-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .ow-tag {
-      background: rgba(13,33,55,0.05); border: 1px solid rgba(13,33,55,0.12); color: #1A365D;
+      background: #EFF6FF; border: 1px solid rgba(37,99,235,0.18); color: #2563EB;
       font-size: 0.74rem; font-weight: 600; padding: 4px 12px; border-radius: 50px;
     }
 
+    /* ── Gallery Section ── */
     .ow-gallery { padding: 90px 0; background: #F8FAFC; }
     .ow-gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: 260px 260px; gap: 12px; }
     .ow-gallery-item {
-      position: relative; border-radius: 14px; overflow: hidden; cursor: pointer;
-      border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      position: relative; border-radius: 20px; overflow: hidden; cursor: pointer;
+      border: 1px solid #E2E8F0; box-shadow: 0 1px 3px rgba(15,23,42,0.06);
     }
     .ow-gallery-item:nth-child(1) { grid-column: span 2; }
-    .ow-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-    .ow-gallery-item:hover img { transform: scale(1.05); }
+    .ow-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
+    .ow-gallery-item:hover img { transform: scale(1.03); }
     .ow-gallery-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 45%, rgba(13,33,55,0.90) 100%);
+      background: linear-gradient(180deg, transparent 45%, rgba(10,37,64,0.90) 100%);
       display: flex; align-items: flex-end; padding: 20px; opacity: 0; transition: opacity 0.3s ease;
     }
     .ow-gallery-item:hover .ow-gallery-overlay { opacity: 1; }
-    .ow-gallery-label { color: #fff; font-size: 0.875rem; font-weight: 700; border-left: 3px solid #F59E0B; padding-left: 10px; }
+    .ow-gallery-label { color: #fff; font-size: 0.875rem; font-weight: 700; border-left: 3px solid #60A5FA; padding-left: 10px; }
     .ow-gallery-item.product-bg img { object-fit: contain; background: #ffffff; padding: 16px; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
 
+    /* ── Mills Showcase ── */
     .ow-mills { padding: 90px 0; background: #FFFFFF; }
     .ow-mills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
-    .ow-mill-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden; transition: all 0.28s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    .ow-mill-card:hover { border-color: rgba(13,33,55,0.20); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .ow-mill-card { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; overflow: hidden; transition: all 0.28s ease; box-shadow: 0 1px 3px rgba(15,23,42,0.05); }
+    .ow-mill-card:hover { border-color: rgba(37,99,235,0.20); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(37,99,235,0.12); }
     .ow-mill-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.45s ease; }
     .ow-mill-card:hover img { transform: scale(1.04); }
     .ow-mill-body { padding: 22px 24px; }
-    .ow-mill-badge { display: inline-block; background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.20); color: #92400E; font-size: 0.70rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 10px; }
-    .ow-mill-body h3 { font-size: 1rem; font-weight: 800; color: #1E293B; margin-bottom: 8px; }
+    .ow-mill-badge { display: inline-block; background: #EFF6FF; border: 1px solid rgba(37,99,235,0.18); color: #1D4ED8; font-size: 0.70rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; margin-bottom: 10px; }
+    .ow-mill-body h3 { font-size: 1rem; font-weight: 800; color: #0F172A; margin-bottom: 8px; }
     .ow-mill-body p { font-size: 0.875rem; color: #64748B; line-height: 1.72; }
 
+    /* ── Quality Commitment ── */
     .ow-quality { padding: 90px 0; background: #F8FAFC; }
     .ow-quality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .ow-quality-img { border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 20px 48px rgba(0,0,0,0.10); }
+    .ow-quality-img { border-radius: 20px; overflow: hidden; position: relative; box-shadow: 0 24px 50px rgba(15,23,42,0.10); }
     .ow-quality-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
-    .ow-quality-img::after { content: ''; position: absolute; inset: 0; border-radius: 20px; border: 2px solid rgba(245,158,11,0.15); pointer-events: none; }
-    .ow-quality-content h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; color: #1E293B; margin-bottom: 16px; }
-    .ow-quality-content h2 em { color: #F59E0B; font-style: normal; }
+    .ow-quality-img::after { content: ''; position: absolute; inset: 0; border-radius: 20px; border: 2px solid rgba(37,99,235,0.12); pointer-events: none; }
+    .ow-quality-content h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; color: #0F172A; margin-bottom: 16px; }
+    .ow-quality-content h2 em { color: #2563EB; font-style: normal; }
     .ow-quality-content p { color: #64748B; line-height: 1.82; font-size: 0.94rem; margin-bottom: 14px; }
     .ow-quality-items { display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
-    .ow-qi { display: flex; align-items: flex-start; gap: 14px; background: #FFFFFF; border: 1px solid #E2E8F0; padding: 14px 16px; border-radius: 12px; transition: all 0.25s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-    .ow-qi:hover { border-color: rgba(245,158,11,0.30); box-shadow: 0 4px 14px rgba(0,0,0,0.07); }
-    .ow-qi-icon { width: 36px; height: 36px; flex-shrink: 0; background: rgba(245,158,11,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; border: 1px solid rgba(245,158,11,0.15); }
-    .ow-qi-text h4 { font-size: 0.89rem; font-weight: 700; color: #1E293B; margin-bottom: 3px; }
+    .ow-qi { display: flex; align-items: flex-start; gap: 14px; background: #FFFFFF; border: 1px solid #E2E8F0; padding: 14px 16px; border-radius: 12px; transition: all 0.25s ease; box-shadow: 0 1px 3px rgba(15,23,42,0.04); }
+    .ow-qi:hover { border-color: rgba(37,99,235,0.25); box-shadow: 0 6px 20px rgba(37,99,235,0.12); }
+    .ow-qi-icon { width: 36px; height: 36px; flex-shrink: 0; background: #EFF6FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; border: 1px solid rgba(37,99,235,0.14); color: #2563EB; }
+    .ow-qi-text h4 { font-size: 0.89rem; font-weight: 700; color: #0F172A; margin-bottom: 3px; }
     .ow-qi-text p { font-size: 0.81rem; color: #64748B; line-height: 1.55; margin: 0; }
 
-    .ow-cta { padding: 84px 0; background: #0D2137; text-align: center; position: relative; overflow: hidden; }
-    .ow-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.12) 0%, transparent 70%); }
+    /* ── CTA Banner ── */
+    .ow-cta { padding: 84px 0; background: #0A2540; text-align: center; position: relative; overflow: hidden; }
+    .ow-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 70%); }
     .ow-cta-inner { position: relative; z-index: 1; }
-    .ow-cta h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-    .ow-cta h2 em { color: #F59E0B; font-style: normal; }
+    .ow-cta h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 800; color: #fff; margin-bottom: 14px; }
+    .ow-cta h2 em { color: #60A5FA; font-style: normal; }
     .ow-cta p { color: rgba(255,255,255,0.65); font-size: 1rem; margin-bottom: 36px; }
     .ow-cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-    .ow-btn-amber { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; border-radius: 10px; background: #F59E0B; color: #0D2137; font-weight: 700; font-size: 0.9rem; text-decoration: none; border: none; cursor: pointer; font-family: 'Inter',system-ui,sans-serif; box-shadow: 0 4px 14px rgba(245,158,11,0.30); transition: all 0.22s ease; }
-    .ow-btn-amber:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,0.45); }
-    .ow-btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; border-radius: 10px; background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.40); font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; font-family: 'Inter',system-ui,sans-serif; transition: all 0.22s ease; }
-    .ow-btn-outline:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.75); transform: translateY(-2px); }
+    .ow-btn-amber { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; border-radius: 14px; background: #2563EB; color: #fff; font-weight: 600; font-size: 0.9rem; text-decoration: none; border: none; cursor: pointer; font-family: 'Inter',system-ui,sans-serif; box-shadow: 0 4px 14px rgba(37,99,235,0.35); transition: all 0.22s ease; }
+    .ow-btn-amber:hover { transform: translateY(-2px); background: #1D4ED8; box-shadow: 0 8px 24px rgba(37,99,235,0.45); }
+    .ow-btn-outline { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; border-radius: 14px; background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.40); font-weight: 600; font-size: 0.9rem; text-decoration: none; cursor: pointer; font-family: 'Inter',system-ui,sans-serif; transition: all 0.22s ease; }
+    .ow-btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.75); transform: translateY(-2px); }
 
-    .footer { background: #0D2137; }
-    .float-btn { background: #0D2137 !important; }
-    .float-btn:hover { background: #1A365D !important; }
+    .footer { background: #0A2540; }
+    .float-btn { background: #2563EB !important; box-shadow: 0 6px 20px rgba(37,99,235,0.40) !important; }
+    .float-btn:hover { background: #1D4ED8 !important; box-shadow: 0 10px 32px rgba(37,99,235,0.55) !important; }
 
     @media (max-width: 768px) {
       .ow-step { grid-template-columns: 80px 1fr; }
