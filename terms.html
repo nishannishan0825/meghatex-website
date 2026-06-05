@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,137 +9,106 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>
-    /* ── Terms page highlights ── */
+    <style>
+    /* ── Terms page – Premium Professional Theme ── */
     .terms-highlight {
-      background: rgba(245,158,11,0.08);
-      border-left: 4px solid var(--blue);
-      padding: 16px 20px;
-      border-radius: 0 10px 10px 0;
+      background: rgba(245,158,11,0.06);
+      border-left: 3px solid #F59E0B;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
       margin: 16px 0; font-size: 0.9rem;
-      color: #e5e7eb; line-height: 1.7;
+      color: #475569; line-height: 1.72;
     }
     .terms-warning {
-      background: rgba(245,158,11,0.12);
-      border-left: 4px solid var(--gold);
-      padding: 16px 20px;
-      border-radius: 0 10px 10px 0;
+      background: rgba(245,158,11,0.08);
+      border-left: 3px solid #D97706;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
       margin: 16px 0; font-size: 0.9rem;
-      color: #fcd34d; line-height: 1.7;
+      color: #92400E; line-height: 1.72;
     }
-    .privacy-section { padding: 80px 0; background: var(--white); }
-    .effective-date { font-size: 0.82rem; color: var(--grey-dark); margin-bottom: 32px; }
+    .privacy-section { padding: 80px 0; background: #F8FAFC; }
+    .effective-date { font-size: 0.82rem; color: #64748B; margin-bottom: 32px; }
 
-    /* ── COLOURED SIDEBAR NAV ── */
+    /* ── Sidebar Nav ── */
     .terms-nav {
       position: sticky; top: 90px;
-      background: linear-gradient(160deg,#1f2937 0%,#27303f 100%) !important;
-      border-radius: 18px !important;
-      padding: 28px 20px !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06) !important;
-      border: none !important;
+      background: #F8FAFC !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 14px !important;
+      padding: 24px 20px !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
     }
     .terms-nav h4 {
-      color: rgba(255,255,255,0.5) !important;
-      font-size: 0.7rem !important; letter-spacing: 2px !important;
-      text-transform: uppercase !important; margin-bottom: 20px !important;
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: #94A3B8 !important;
+      font-size: 0.70rem !important; letter-spacing: 1.6px !important;
+      text-transform: uppercase !important; margin-bottom: 18px !important;
+      padding-bottom: 12px !important;
+      border-bottom: 1px solid #E2E8F0 !important;
     }
-    .terms-nav ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .terms-nav ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
     .terms-nav a {
       display: flex; align-items: center; gap: 10px;
-      padding: 10px 14px; border-radius: 50px !important;
-      font-size: 0.84rem; color: rgba(255,255,255,0.65) !important;
-      text-decoration: none; transition: all 0.25s ease;
-      font-weight: 500;
+      padding: 9px 12px; border-radius: 8px !important;
+      font-size: 0.84rem; color: #64748B !important;
+      text-decoration: none; transition: all 0.22s ease; font-weight: 500;
     }
     .terms-nav a::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: rgba(255,255,255,0.25); flex-shrink: 0;
-      transition: all 0.25s ease;
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: #CBD5E1; flex-shrink: 0; transition: all 0.22s ease;
     }
     .terms-nav a:hover {
-      background: rgba(255,255,255,0.1) !important;
-      color: #fff !important; padding-left: 18px;
+      background: #EEF2F7 !important;
+      color: #0D2137 !important;
     }
-    .terms-nav a:hover::before { background: var(--gold); }
+    .terms-nav a:hover::before { background: #F59E0B; }
     .terms-nav a.active {
-      background: linear-gradient(135deg,rgba(245,158,11,0.6),rgba(245,158,11,0.3)) !important;
-      color: #fff !important;
-      box-shadow: 0 4px 16px rgba(245,158,11,0.35);
+      background: rgba(13,33,55,0.06) !important;
+      color: #0D2137 !important; font-weight: 600 !important;
     }
-    .terms-nav a.active::before { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+    .terms-nav a.active::before { background: #F59E0B; }
 
-    /* ── CURVY SHADY BUTTONS global ── */
-    .btn {
-      border-radius: 50px !important;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.12) !important;
-      transition: all 0.3s cubic-bezier(0.4,0,0.2,1) !important;
-      position: relative; overflow: hidden;
-    }
-    .btn::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg,rgba(255,255,255,0.12) 0%,transparent 100%);
-      border-radius: 50px; pointer-events: none;
-    }
-    .btn:hover { transform: translateY(-3px) scale(1.02) !important; }
-    .btn-primary { box-shadow: 0 8px 24px rgba(37,99,235,0.45), 0 2px 6px rgba(0,0,0,0.15) !important; }
-    .btn-gold    { box-shadow: 0 8px 24px rgba(245,158,11,0.45), 0 2px 6px rgba(0,0,0,0.15) !important; }
-    .btn-outline { box-shadow: 0 4px 16px rgba(255,255,255,0.1) !important; }
+    /* ── Buttons ── */
+    .btn { border-radius: 10px !important; transition: all 0.22s ease !important; }
+    .btn:hover { transform: translateY(-2px) !important; }
+    .btn-primary { box-shadow: 0 4px 14px rgba(13,33,55,0.28) !important; }
+    .btn-gold    { box-shadow: 0 4px 14px rgba(245,158,11,0.28) !important; }
+    .btn-outline { }
 
     /* ── Contact action buttons ── */
     .contact-action-btn {
-      border-radius: 50px !important;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border-width: 2px !important;
-      padding: 14px 20px !important;
-      display: flex; flex-direction: row !important;
+      border-radius: 12px !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
+      transition: all 0.22s ease !important;
+      border-width: 1px !important;
+      padding: 14px 16px !important;
+      display: flex; flex-direction: column !important;
       align-items: center; justify-content: center;
-      gap: 8px;
-      font-size: 0.92rem !important;
-      text-decoration: none;
-      position: relative; overflow: hidden;
+      gap: 8px; font-size: 0.84rem !important;
+      text-decoration: none; background: #FFFFFF !important;
     }
-    .contact-action-btn::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg,rgba(255,255,255,0.15) 0%,transparent 60%);
-      border-radius: 50px; pointer-events: none;
-    }
-    .contact-action-btn:hover { transform: translateY(-3px) scale(1.02) !important; }
-    .ca-call:hover { box-shadow: 0 12px 32px rgba(37,99,235,0.45) !important; }
-    .ca-email:hover { box-shadow: 0 12px 32px rgba(234,68,68,0.4) !important; }
-    .ca-wa:hover   { box-shadow: 0 12px 32px rgba(37,211,102,0.45) !important; }
+    .contact-action-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 6px 18px rgba(0,0,0,0.09) !important; }
 
     /* ── CTA strip ── */
     .contact-cta-strip {
-      background: linear-gradient(135deg,#0a1628 0%,#1e3a5f 60%,#0f2044 100%);
-      padding: 40px 0;
-      text-align: center;
+      background: linear-gradient(135deg, #0D2137 0%, #1A365D 60%, #0F2942 100%);
+      padding: 40px 0; text-align: center;
       border-top: 1px solid rgba(255,255,255,0.06);
       border-bottom: 1px solid rgba(255,255,255,0.06);
       position: relative; overflow: hidden;
     }
     .contact-cta-strip::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle at 20% 50%,rgba(37,99,235,0.15) 0%,transparent 50%),
-                        radial-gradient(circle at 80% 50%,rgba(245,158,11,0.1) 0%,transparent 50%);
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(245,158,11,0.10) 0%, transparent 70%);
     }
-    .contact-cta-strip h3 { color: var(--white); font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
-    .contact-cta-strip p  { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 24px; position: relative; z-index: 1; }
+    .contact-cta-strip h3 { color: #fff; font-size: 1.28rem; font-weight: 700; margin-bottom: 8px; position: relative; z-index: 1; }
+    .contact-cta-strip p  { color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-bottom: 24px; position: relative; z-index: 1; }
     .contact-cta-strip .strip-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; z-index: 1; }
 
-    /* ── Contact section background ── */
-    .contact-section {
-      background: linear-gradient(160deg,#111827 0%,#1f2937 100%) !important;
-    }
+    /* ── Contact section ── */
+    .contact-section { background: #F8FAFC !important; }
 
-    /* ── Gmail SVG icon helper ── */
-    .gmail-icon {
-      width: 18px; height: 18px; display: inline-flex; flex-shrink: 0;
-    }
+    .gmail-icon { width: 18px; height: 18px; display: inline-flex; flex-shrink: 0; }
   </style>
 </head>
 <body>
